@@ -114,7 +114,7 @@ class MainActivity : AppCompatActivity() {
                         for(a in lisdato){
                             sub2+=a.precio
                         }
-                        tot2=sub2.toFloat()*iva2.toFloat()
+                        tot2=(sub2.toFloat()*iva2.toFloat())+sub2
                         val dat = factura(0.16.toFloat(),sub2,tot2)
                         dbref.push().setValue(dat)
                         ocultarTeclado()
