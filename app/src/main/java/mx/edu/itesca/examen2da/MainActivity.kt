@@ -115,12 +115,13 @@ class MainActivity : AppCompatActivity() {
                             sub2+=a.precio
                         }
                         tot2=(sub2.toFloat()*iva2.toFloat())+sub2
+                        iva2*=sub2
                         val dat = factura(0.16.toFloat(),sub2,tot2)
                         dbref.push().setValue(dat)
                         ocultarTeclado()
                         Toast.makeText(this@MainActivity,
                             "Factura Registrado!!", Toast.LENGTH_SHORT).show()
-                        iva?.setText("0.16")
+                        iva?.setText(iva2.toString())
                         subtotal?.setText(sub2.toString())
                         total?.setText(tot2.toString())
                     }
